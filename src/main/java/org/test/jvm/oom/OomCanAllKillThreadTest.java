@@ -46,11 +46,14 @@ public class OomCanAllKillThreadTest {
     /**
      * 线程0
      */
+    @SuppressWarnings("unchecked")
     static class MyThread0 implements Runnable {
 
         @Override
+        @SuppressWarnings("unchecked")
         public void run() {
             List<byte[]> bytesList = new ArrayList<>();
+
             while (true) {
                 bytesList.add(new byte[1024]);
             }
@@ -60,9 +63,11 @@ public class OomCanAllKillThreadTest {
     /**
      * 线程1
      */
+    @SuppressWarnings("PMD")
     static class MyThread1 implements Runnable {
 
         @Override
+        @SuppressWarnings("PMD")
         public void run() {
             List<byte[]> bytesList = new ArrayList<>();
             while (true) {
@@ -70,9 +75,8 @@ public class OomCanAllKillThreadTest {
                     // 捕获了错误并继续执行
                     bytesList.add(new byte[1024]);
                     Thread.sleep(1000);
-                    System.out.println("==========");
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+//                    e.printStackTrace(); ignore
                 }
             }
         }
