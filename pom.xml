@@ -27,6 +27,20 @@
             <version>5.3.1</version>
         </dependency>
     </dependencies>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.host.url>http://10.236.78.231:9000</sonar.host.url>
+                <sonar.login>0db6264eaf90011955940e20446ee097a970dfcf</sonar.login>
+            </properties>
+        </profile>
+
+    </profiles>
+
     <build>
         <plugins>
             <plugin>
@@ -39,4 +53,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
