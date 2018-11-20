@@ -3,6 +3,9 @@ package org.test.graph.dfs;
 
 /**
  * 实现计算出九宫格的总的路径
+ * {{0, 1, 2},
+ *  {3, 4, 5},
+ *  {6, 7, 8}}
  * 最短的组合为4
  */
 public class NineLattice {
